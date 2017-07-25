@@ -1,0 +1,22 @@
+<%= form_tag('/registration', method: "post") do%>
+  <%= label_tag(:q, "Full Name:") %>
+  <%= text_field_tag(:name) %><br>
+
+<%= label_tag(:address, "Email") %>
+<%= email_field(:user, :address) %><br>
+
+<%= label_tag(:password, "password ") %>
+<%= password_field_tag(:password)%><br>
+
+<%= label_tag(:phone, "phone") %>
+<%= text_field_tag(:phone)%><br>
+
+<%= label_tag(:address, "Address") %>
+<%= text_area_tag(:address)%><br>
+  
+<%= label_tag(:born_on, "DOB") %>
+<%= date_field(:user, :born_on) %>
+
+<%= submit_tag 'Submit'%>
+<%end%>
+
