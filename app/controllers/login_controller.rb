@@ -80,7 +80,8 @@ def login
 
         byebug;
         if @result["error"]==false
-        session[:user_id]=@result["session_id"]
+        res=@result["result"]
+        session[:user_id]=res["session_id"]
         return redirect_to '/';
         else
         return redirect_to '/vlogin'
@@ -90,6 +91,7 @@ end
 def logout
 @result = HTTParty.post("http://127.0.0.1:8000/user/logout",
          :body => {
+
          	:session_id=>session[:user_id]
          	}.to_json,
             :headers => { 'Content-Type' => 'application/json' })
