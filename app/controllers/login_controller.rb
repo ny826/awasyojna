@@ -104,7 +104,18 @@ puts "inside logout"
         return redirect_to '/';
         
         end
-	return redirect_to '/'end
+	return redirect_to '/'
 
+end
+
+
+def User_profile
+ response = HTTParty.get("http://127.0.0.1:8000/user/info?session_id=#{session[:user_id]}"
+         )
+ res=response["result"]
+ @user=res["user"]
+ puts @user
+
+end
 
 end
