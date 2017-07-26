@@ -1,1 +1,11 @@
-hello welcome to index section 
+
+<% puts "session id is #{session[:user_id]}"%>
+
+
+<% if session[:user_id]%>
+<%= link_to "Logout", :method => :post, :data => {:confirm => "You Sure?"} %>
+<%= link_to "Logout", url_for(controller: :login, action: :logout), method: :post%>
+
+<%else%>
+<%= link_to "Login", url_for(controller: :login, action: :vlogin), method: :get%>
+<%end%>
