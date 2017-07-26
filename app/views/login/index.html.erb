@@ -3,7 +3,7 @@
 
 
 <% if session[:user_id]%>
-<%= link_to "Logout", :method => :post, :data => {:confirm => "You Sure?"} %>
+
 <%= link_to "Logout", url_for(controller: :login, action: :logout), method: :post%>
 
 <%else%>

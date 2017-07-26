@@ -78,7 +78,7 @@ def login
         
         puts @result
 
-        byebug;
+        #byebug;
         if @result["error"]==false
         res=@result["result"]
         session[:user_id]=res["session_id"]
@@ -89,6 +89,7 @@ def login
 end
 
 def logout
+puts "inside logout"
 @result = HTTParty.post("http://127.0.0.1:8000/user/logout",
          :body => {
 
@@ -96,6 +97,8 @@ def logout
          	}.to_json,
             :headers => { 'Content-Type' => 'application/json' })
         
+        session[:user_id]=nil;
+
         puts @result
         if @result["error"]==false
         return redirect_to '/';
