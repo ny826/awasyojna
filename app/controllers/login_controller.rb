@@ -25,9 +25,9 @@ def registration
     pan=params[:pan]
     aadhar=params[:aadhar]
     
-    if gender=="Male"
+    if gender=="male"
     no=1;
-    elsif gender=="Female"
+    elsif gender=="female"
     no=2;
     elsif gender=="Others"
     no=3;
