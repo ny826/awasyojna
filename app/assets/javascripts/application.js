@@ -18,3 +18,56 @@
 
 
 
+
+ $( document ).ready(function() {
+      $(".button-collapse").sideNav();
+
+    });
+
+
+ window.addEventListener('load',function(){
+var content=document.getElementById('book_heading');
+content.addEventListener('keyup',function(){
+	var letter=document.getElementById('letter');
+	letter.innerHTML=content.value.length;
+	if (content.value.length>18) {
+		letter.style.color="red";
+	}
+	else{
+		letter.style.color="black";
+	}
+})
+});
+
+ window.addEventListener('load',function(){
+var content=document.getElementById('book_description');
+content.addEventListener('keyup',function(){
+	var letter=document.getElementById('letter1');
+	letter.innerHTML=content.value.length;
+	if (content.value.length>140) {
+		letter.style.color="red";
+	}
+	else{
+		letter.style.color="black";
+	}
+})
+});
+
+
+document.addEventListener("DOMContentLoaded", function(){
+    $('.preloader-background').delay(1700).fadeOut('slow');
+
+    $('.preloader-wrapper')
+        .delay(5000)
+        .fadeOut();
+});
+
+
+(function($){
+  $(function(){
+
+    $('.button-collapse').sideNav();
+    $('.parallax').parallax();
+
+  }); // end of document ready
+})(jQuery); // end of jQuery name space
