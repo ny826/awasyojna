@@ -88,27 +88,7 @@
 
 
 
-      <!-- Dropdown Structure -->
-      <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">A really long item here</a></li>
-        <li><a href="#!">two</a></li>
-        <!-- <li class="divider"></li> -->
-        <li><a href="#!">grade</i>three</a></li>
-      </ul>
-
-
-
-    <ul class="right hidden-lg-o">
-        <% if current_user%>
-            <li><%= link_to "Logout", url_for(controller: :login, action: :logout), :class=>"dropdown-button",method: :post%></li>
-
-        <%else%>
-            <li><a href="/vlogin">Log In</a></li>
-        <%end%>
-    </ul>
-
-
-
+     
       <ul id="slide-out" class="side-nav">
         <li><a href="/home/hometab">Home</a></li>
         <li><a href="/home/ray">Rajkot Awas Yojna</a></li>
@@ -125,12 +105,11 @@
                 <li><a href="/User_profile">Profile</a></li>
                 <li><a href="/">View Schemes</a></li>
                 <li><%= link_to "Logout", url_for(controller: :login, action: :logout), method: :post%></li>
-                <%end%>
-              </ul>
-
-
+         </ul>
           </li>
-
+         <%else%>
+         <li><a href="/vlogin">Login</a></li>
+         <%end%>
 
 
 

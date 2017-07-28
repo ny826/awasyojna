@@ -82,7 +82,7 @@ def login
         if @result["error"]==false
         res=@result["result"]
         session[:user_id]=res["session_id"]
-        session_id[:uid]=res["user_id"]
+        session[:uid]=res["user_id"]
         return redirect_to '/';
         else
         return redirect_to '/vlogin'
@@ -102,7 +102,7 @@ puts "inside logout"
         puts @result
         if @result["error"]==false
         session[:user_id]=nil;
-        session[:user_id]=nil;
+        session[:uid]=nil;
         return redirect_to '/';
         
         end
