@@ -13,6 +13,11 @@
 
   <body>
 
+
+
+
+
+
   <div class="navbar-upper">
   <nav class="z-depth-0">
     <div class="nav-wrapper">
@@ -46,21 +51,20 @@
             <!-- <img src="https://materializecss.com/res/materialize.svg" alt="" style="margin-top:12px;" height="40px"/> -->
             <i class="large material-icons">important_devices</i>
           </a>
-                          <ul id="nav-mobile" class="right hide-on-med-and-down">
+                
+
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-203 current_page_item"><a href="/home/hometab">Home</a></li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/home/ray">Rajkot Awas Yojna</a></li>
                 <li  class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/home/smartcity">Smart City</a></li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/home/location">Location</a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/home/societyreg">Society Registration</a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/home/download">Download</a></li>
-                <li  class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/home/tnc">Terms &Conditions</a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/home/blog">Blogs</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/schemes/scheme">Schemes</a></li>
                 <li  class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/home/contact">Contacts</a></li>
-
+              
+              <% if session[:user_id]%>
                <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons">account_box</i></a>
 
                 <ul id="dropdown1" class="dropdown-content">
-                        <% if session[:user_id]%>
                         <li><a href="/User_profile">Profile</a></li>
                         <li><a href="/">View Schemes</a></li>
                         <li><%= link_to "Logout", url_for(controller: :login, action: :logout), method: :post%></li>
@@ -143,3 +147,4 @@
 
   </body>
 </html>
+

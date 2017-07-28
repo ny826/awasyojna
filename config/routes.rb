@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'schemes/scheme'
+
   get '/home/hometab' => 'home#hometab'
 
   get '/home/ray' =>  'home#ray'
@@ -8,9 +10,8 @@ Rails.application.routes.draw do
 
   get '/home/location' => 'home#location'
 
-  get '/home/societyreg' => 'home#societyreg'
 
-  get '/home/download' => 'home#download'
+  get '/schemes/scheme' => 'schemes#scheme'
 
   get '/home/tnc' => 'home#tnc'
 
@@ -30,4 +31,6 @@ post '/logout'=>'login#logout'
 get '/User_profile'=>'login#User_profile'
 
 get '/vlogin'=>'login#vlogin'
+
+post '/scheme_register'=>'schemes#scheme_register'
 end

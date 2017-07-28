@@ -11,18 +11,11 @@ class HomeController < ApplicationController
   def location
   end
 
-  def societyreg
-  end
-
-  def download
-  end
-
-  def tnc
-  end
-
-  def blog
-  end
-
   def contact
+  end
+
+
+  def contact_us
+
   end
 end
