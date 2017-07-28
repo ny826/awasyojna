@@ -16,6 +16,12 @@ class SchemesController < ApplicationController
   end
   
   def scheme_register
+
   end
 
+  def notification
+      @result = HTTParty.get("http://127.0.0.1:8000/notifications/notifications")
+  end
+
+ 
 end

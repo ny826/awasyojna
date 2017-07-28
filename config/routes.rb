@@ -33,4 +33,6 @@ get '/User_profile'=>'login#User_profile'
 get '/vlogin'=>'login#vlogin'
 
 post '/scheme_register'=>'schemes#scheme_register'
+
+get '/notification'=>'schemes#notification'
 end

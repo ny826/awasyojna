@@ -12,7 +12,7 @@
     <ul class="collection">
     <li class="collection-item">
     <% if session[:user_id]%>
-    <%= link_to "Register Here", url_for(controller: :schemes, action: :scheme_register), method: :post%></li>
+    <%= link_to "Register Here", url_for(controller: :schemes, action: :scheme_register,:), method: :post%></li>
     <%else%>
     <a href="/vlogin">Login TO Register On Scheme</a>
    <%end%>
