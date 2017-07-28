@@ -97,10 +97,10 @@ puts "inside logout"
          	}.to_json,
             :headers => { 'Content-Type' => 'application/json' })
         
-        session[:user_id]=nil;
 
         puts @result
         if @result["error"]==false
+        session[:user_id]=nil;
         return redirect_to '/';
         
         end
@@ -110,11 +110,14 @@ end
 
 
 def User_profile
+    puts session[:user_id]
  response = HTTParty.get("http://127.0.0.1:8000/user/info?session_id=#{session[:user_id]}"
          )
+ puts response
  res=response["result"]
  @user=res["user"]
  puts @user
+
 
 end
 
