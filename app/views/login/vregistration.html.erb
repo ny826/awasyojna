@@ -1,5 +1,8 @@
+<br>
+<br>
+
 <%= form_tag('/registration', method: "post") do%>
-  
+
   <%= label_tag(:name, "Full Name:") %>
   <%= text_field_tag(:name) %><br>
 
@@ -24,11 +27,11 @@
   <%= label_tag(:aadhar, "Aadhar No:") %>
   <%= text_field_tag(:aadhar) %><br>
 
-  
+
 
   <%= select_tag(:Gender, '<option value="1">Male</option>, <option value="2">Female</option>') %><br>
 
-  
+
 <%= label_tag(:address, "Email:") %>
 <%= email_field(:user, :address) %><br>
 
@@ -44,7 +47,7 @@
 <%= label_tag(:born_on, "DOB:") %>
 <%= date_field(:user, :born_on) %>
 
-<%= submit_tag 'Register'%>
+<%= submit_tag 'Register',:class=>("btn waves-effect waves-light col s12")%>
+<a href="/vlogin">Login</a>
+
 <%end%>
-
-

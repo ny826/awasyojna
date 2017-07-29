@@ -1,3 +1,6 @@
+<br>
+<br>
+
 <%= form_tag('/login', method: "post") do%>
 
 <%= label_tag(:address, "Email") %>
@@ -6,9 +9,7 @@
 <%= label_tag(:password, "password ") %>
 <%= password_field_tag(:password)%><br>
 
-<%= submit_tag 'Login'%>
+<%= submit_tag 'Login',:class=>("btn waves-effect waves-light col s12")%>
 <%end%>
 
 <a href="/vregistration">Register</a>
-
-
