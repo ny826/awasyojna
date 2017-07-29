@@ -87,20 +87,49 @@ class AdminController < ApplicationController
  	response = HTTParty.get("http://127.0.0.1:8000/notifications/notifications"
          )
  puts response
- byebug;
+ #byebug;
  end
 
 
  def Addnotice
+ 	@result = HTTParty.post("http://127.0.0.1:8000/notifications/notifications",
+         :body => {
+         	:message =>"Hello Hacathon",
+	         :url =>"https://gmail.com",
+	         :end_date =>"2017-08-10",
+	         :start_date =>"2017-07-14",
+	        }.to_json,
+            :headers => { 'Content-Type' => 'application/json' })
+        
+        puts @result
+
+        #byebug;
+        if @result["error"]==false
+        @result["message"]
+        else
+        @result["message"]
+        end
+    return redirect_to '/admin/index';
+
  end
 
- 
- def seeflat
- end
-
-
- 
  def Addflat
+
+ 	@result = HTTParty.post("http://127.0.0.1:8000/scheme/add_flat",
+                  :body => {
+         	:scheme =>"id here",
+	         :flat_type =>"id here",
+	         :carpet_area =>"2017-08-10",
+	         :accomodation =>"2017-07-14",
+	         :estimate_cost=>"2017-08-18",
+	         :application_cost=>"",
+	         :maintenance_deposit=>"",
+	         :no_of_flats=>"",
+	        }.to_json,
+            :headers => { 'Content-Type' => 'application/json' })
+        
+        puts @result
+
  end
 
  
@@ -119,8 +148,24 @@ class AdminController < ApplicationController
  
  
  def Addscheme
+ 	 	@result = HTTParty.post("http://127.0.0.1:8000/scheme/create_scheme",
+                  :body => {
+         	:name =>"Hello Hacathon",
+	         :location =>"https://gmail.com",
+	         :end_date =>"2017-08-10",
+	         :start_date =>"2017-07-14",
+	         :draw_date=>"2017-08-18",
+	        }.to_json,
+            :headers => { 'Content-Type' => 'application/json' })
+        
+        puts @result
  end
 
+def avlogout
+	session[:user_id]=nil;
+	session[:uid]=nil;
+	return redirect_to '/admin/index';
+end
 
 
 end

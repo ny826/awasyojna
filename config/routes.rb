@@ -58,16 +58,18 @@ get '/admin/Alluser'=>'admin#Alluser'
 
 get '/admin/seenotice'=>'admin#seenotice'
 
-post '/admin/Addnotice'=>'admin#Addnotice'
+post '/Addnotice'=>'admin#Addnotice'
 
 get '/admin/seeflat'=>'admin#seeflat'
 
-post '/admin/Addflat'=>'admin#Addflat'
+post '/Addflat'=>'admin#Addflat'
 
 get '/admin/seescheme'=>'admin#seescheme'
  
- post '/admin/Addscheme'=>'admin#Addscheme'
+ post '/Addscheme'=>'admin#Addscheme'
 
+
+post '/avlogout'=>'admin#avlogout'
 
 
 end

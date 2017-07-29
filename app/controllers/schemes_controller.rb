@@ -23,6 +23,9 @@ class SchemesController < ApplicationController
 
   def notification
       @result = HTTParty.get("http://127.0.0.1:8000/notifications/notifications")
+      puts @result
+
+      #byebug;
   end
 
  

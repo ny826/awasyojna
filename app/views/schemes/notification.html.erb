@@ -1,3 +1,18 @@
-<% @result["result"]["notifications"].each do |v|%>
 
-<%end%>
+<div class="col s12">
+      <ul class="collapsible popout" data-collapsible="accordion">
+        <li class="collection-header"><h4>Schemes</h4></li>
+            <% @result["result"]["notifications"].each do |v|%>
+                   <li>
+               <div class="collapsible-header">1<i class="material-icons right">add</i></div>
+               <div class="collapsible-body"><div class="row"></div>
+                   message: <%= v["message"]%><br>
+                   url: <%= v["url"]%><br>
+                   Start Date : <%= v["start_date"]%><br>
+                   End date: <%= v["end_date"]%><br>
+
+                </li>
+                    <%end%>
+       </ul>
+  </div>
+</div>
