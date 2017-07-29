@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mart</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application','data-turbolinks-track' => false %>
+  <%= csrf_meta_tags %>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+</head>
+
+<main>
+
+
+<div class="preloader-background">
+
+  <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="nav-selector">
+  
+
+<!-- Dropdown Structure -->
+<ul id="User" class="dropdown-content">
+  <li><a href="/cse1">Alluser</a></li>
+</ul>
+
+<ul id="scheme" class="dropdown-content">
+  <li><a href="/it1">Add Scheme</a></li>
+  <li><a href="/it2">All Scheme</a></li>
+</ul>
+
+<ul id="notice" class="dropdown-content">
+  <li><a href="/ece1">Add Notice</a></li>
+  <li><a href="/ece2">See Notices</a></li>
+
+</ul>
+
+<ul id="flats" class="dropdown-content">
+  <li><a href="/bt1">Add Flats</a></li>
+  <li><a href="/bt2">see Flats</a></li>
+
+</ul>
+
+
+
+<ul id="fb" class="dropdown-content">
+  
+<% if session[:user_id]%>
+  
+  <li><%= link_to "Log out", :method => :get} %></li>
+<%end%>
+</ul>
+
+<ul id="fb_login" class="dropdown-content">
+  
+ <% if session[:user_id]%>
+  
+  <li><%= link_to "Log out", :method => :get} %></li>
+<%end%>
+
+</ul>
+
+
+
+<nav>
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo ">Ipu Mart</a>
+
+    <ul class="right hide-on-med-and-down">
+
+    <li><a href="/books">Home</a></li>
+      <!-- Dropdown Trigger -->
+      <li><a class="dropdown-button" href="#" data-activates="cse">User<i class="material-icons right">arrow_drop_down</i></a></li>
+
+       <li><a class="dropdown-button" href="#" data-activates="it">Scheme<i class="material-icons right">arrow_drop_down</i></a></li>
+
+       <li><a class="dropdown-button" href="#" data-activates="ece">Flats<i class="material-icons right">arrow_drop_down</i></a></li>
+
+        <li><a class="dropdown-button" href="#" data-activates="bt">Notices<i class="material-icons right">arrow_drop_down</i></a></li>
+
+    </ul>
+
+    <!--  login option in mobile tab -->
+
+    <ul class="right hidden-lg-o">
+        <% if session[:user_id]%>
+       <li><%= link_to "Log out", :method => :get} %></li>
+       <%end%>
+      </ul>
+
+
+
+
+
+
+    <ul id="slide-out" class="side-nav">
+       <br>
+      <li><a href="/books">Home</a></li>
+      <hr>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">CSE<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="/cse1">Ist year</a></li>
+                <li><a href="/cse2">2nd year</a></li>
+                <li><a href="/cse3">3rd year</a></li>
+                <li><a href="cse4">4th year</a></li>
+              </ul>
+            </div>
+
+          </li>
+        </ul>
+      </li>
+      <hr>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">IT<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+
+                <li><a href="/it1">Ist year</a></li>
+                <li><a href="/it2">2nd year</a></li>
+                <li><a href="/it3">3rd year</a></li>
+                <li><a href="/it4">4th year</a></li>
+
+              </ul>
+            </div>
+
+          </li>
+        </ul>
+      </li>
+     <hr>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">ECE<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="/ece1">Ist year</a></li>
+                <li><a href="/ece2">2nd year</a></li>
+                <li><a href="/ece3">3rd year</a></li>
+                <li><a href="/ece4">4th year</a></li>
+              </ul>
+            </div>
+
+          </li>
+        </ul>
+      </li>
+      <hr>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">BT<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="/bt1">Ist year</a></li>
+                <li><a href="/bt2">2nd year</a></li>
+                <li><a href="/bt3">3rd year</a></li>
+                <li><a href="/bt4">4th year</a></li>
+              </ul>
+            </div>
+
+          </li>
+        </ul>
+      </li>
+      <hr>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">CT<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="/ct1">Ist year</a></li>
+                <li><a href="/ct2">2nd year</a></li>
+                <li><a href="/ct3">3rd year</a></li>
+                <li><a href="/ct4">4th year</a></li>
+              </ul>
+            </div>
+
+          </li>
+        </ul>
+      </li>
+
+      <hr>
+      <li><a href="/show_paper">Paper World</a></li>
+      <hr>
+    </ul>
+
+    <a href="" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
+<br>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col offset-m3 m6 s12 ">
+      <form  action="/find" method="get">
+        <input type="text" id="books-search-txt" name="heading" autofocus>
+      </form>
+
+      <div class="results" id="books-search-results"></div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<p class="notice"><%= notice %></p>
+ <p class="alert"><%= alert %></p>
+
+
+
+ <main></main>
+<div class="container">
+<div class="row"> 
+<%= yield%>
+</div>
+</div>
+</main>
+
+  <% if current_user%>
+      <div class="fixed-action-btn">
+      <a class="btn-floating btn-large waves-effect waves-light blue" href="/add_post"><i class="material-icons">add</i></a>
+      </div>
+<%end%>
+
+
+<footer class="page-footer indigo darken-4">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Company Bio</h5>
+        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>        
+      </div>
+
+      <div class="col l3 s12">
+        <div id="fb-root"></div>
+        <div class="fb-page " 
+          data-href="https://www.facebook.com/harshbeniwalofficial/" 
+          data-width="380"
+          data-layout="standard" 
+          data-hide-cover="false"
+          data-action="share"
+          data-show-facepile="true">    
+
+        </div>
+  
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+       <a class="brown-text text-lighten-3" href="#">© 2017 IPUMART. All rights reserved.</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
+
+
+
+<style type="text/css">
+  .side-nav .collapsible-header, .side-nav.fixed .collapsible-header {
+    padding: 1px 16px;
+}
+img{
+  border-radius: 50%;
+}
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  main {
+    flex: 1 0 auto;
+  }
+  @media(min-width:769px){
+    .hidden-lg-o li{
+      display: none!important;
+    }
+  }
+  .pagination{
+    background-color: white;
+    margin-bottom: 5px;
+  }
+  nav{
+    background-color: #1a237e;
+  }
+  ul > .uiList _4cg3 _509- _4ki{
+    width: 225px;
+  }
+</style>
+
+
+<script type="text/javascript">
+    $('#books-search-txt').autocomplete({
+        minLength: 1,
+        source: function(request,response){
+            $.ajax({
+                method: 'GET',
+                url : '/home/autocomplete?term=' + $('#books-search-txt').val().toLowerCase(),
+                dataType : 'json',
+                success : function(data) {
+                    data = data.slice(0,4);
+                    response($.map(data,function(v,i) {
+                        var bookname =  v.heading;
+                        return {
+                            id: v.id,
+                            label: bookname,
+                            value: bookname
+                        }
+                    }))
+                }
+            });
+        },
+        open: function() {
+            //window.scrollTo(0,document.body.scrollHeight);
+        },
+        select: function(event,ui) {
+        },
+        delay :0,
+    })
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1007186959416738";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>

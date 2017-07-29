@@ -37,4 +37,12 @@ get '/vlogin'=>'login#vlogin'
 post '/scheme_register'=>'schemes#scheme_register'
 
 get '/notification'=>'schemes#notification'
+
+get '/avlogin'=>'admin#avlogin'
+
+get '/avregisteration'=>'admin#avregisteration'
+
+post '/alogin'=>'admin#alogin'
+
+post '/aregisteration'=>'admin#aregisteration'
 end
