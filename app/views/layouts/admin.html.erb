@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mart</title>
+  <title>RMC ADMIN</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
   <%= javascript_include_tag 'application','data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
@@ -24,12 +24,12 @@
 </ul>
 
 <ul id="scheme" class="dropdown-content">
-<li><%= link_to "Add Scheme", url_for(controller: :admin, action: :Addscheme), method: :post%></li>
+  <li><a href="/addschemeform">Add Scheme</a></li>
   <li><a href="/admin/seescheme">All Scheme</a></li>
 </ul>
 
 <ul id="notice" class="dropdown-content">
-<li><%= link_to "Add Notice", url_for(controller: :admin, action: :Addnotice), method: :post%></li>
+<li><a href="/addnoticeform">Add Notice</a></li>
 
 <li><a href="/admin/seenotice">See Notices</a></li>
 
@@ -65,7 +65,6 @@
       <!-- Dropdown Trigger -->
     <li><a href="/admin/Alluser">All User</a></li>
        
-       <li><%= link_to "Add Flats", url_for(controller: :admin, action: :Addflat), method: :post%></li>
 
        <li><a class="dropdown-button" href="#" data-activates="scheme">Scheme<i class="material-icons right">arrow_drop_down</i></a></li>
 
@@ -101,7 +100,7 @@
             <div class="collapsible-body">
               <ul>
 
-                 <li><a href="/admin/Addscheme">Add Scheme</a></li>
+                 <li><a href="/addschemeform">Add Scheme</a></li>
    <li>          <a href="/admin/seescheme">All Scheme</a></li>
 
               </ul>
@@ -110,8 +109,6 @@
           </li>
         </ul>
       </li>
-     <hr>
-            <li><a href="/admin/index">Home</a></li>
 
       <hr>
       <li class="no-padding">
@@ -120,7 +117,7 @@
             <a class="collapsible-header">Notice<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
               <ul>
-                  <li><a href="/admin/Addflat">Add Flats</a></li>
+                  <li><a href="/addnoticeform">Add Notices</a></li>
                   <li><a href="/admin/seeflat">see Flats</a></li>
               </ul>
             </div>
@@ -129,11 +126,6 @@
         </ul>
       </li>
       <hr>
-      <% if session[:user_id]%>
-      <li><%= link_to "Logout", url_for(controller: :admin, action: :avlogout), method: :post%></li>
-      <%else%>
-      <li><%= link_to "Login", url_for(controller: :admin, action: :avlogin), method: :get%></li>
-    <%end%>
 
     </ul>
 

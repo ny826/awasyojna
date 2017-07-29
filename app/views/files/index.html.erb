@@ -1,0 +1,25 @@
+
+<br>
+<br>
+<form action="/file_upload">
+Image :<br>
+<input type="file" id="fileuploadform" />
+  <br>
+  <input type="submit" value="Submit">
+</form> 
+
+
+<script type="text/javascript">
+function uint8ToString(buf) {
+    var i, length, out = '';
+    for (i = 0, length = buf.length; i < length; i += 1) {
+        out += String.fromCharCode(buf[i]);
+    }
+    return out;
+}
+
+var base64 = btoa(uint8ToString(yourUint8Array));
+
+
+
+</script>

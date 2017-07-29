@@ -5,7 +5,7 @@ class SchemesController < ApplicationController
   
 
   def scheme
-         result = HTTParty.get("http://127.0.0.1:8000/scheme/scheme_get?admin=1")
+         result = HTTParty.get("http://13.126.53.179:8000/scheme/scheme_get?admin=1")
          #puts result
          #puts result["schemes"]
          result=result["result"]
@@ -22,7 +22,7 @@ class SchemesController < ApplicationController
   end
 
   def notification
-      @result = HTTParty.get("http://127.0.0.1:8000/notifications/notifications")
+      @result = HTTParty.get("http://13.126.53.179:8000/notifications/notifications")
       puts @result
 
       #byebug;

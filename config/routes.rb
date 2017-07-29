@@ -38,7 +38,7 @@ post '/scheme_register'=>'schemes#scheme_register'
 
 get '/notification'=>'schemes#notification'
 
-
+get '/index'=>'files#index'
 
 ###############  Admin Routes
 
@@ -71,5 +71,15 @@ get '/admin/seescheme'=>'admin#seescheme'
 
 post '/avlogout'=>'admin#avlogout'
 
+###############
 
+
+
+get '/addnoticeform'=>'admin#addnoticeform'
+
+get '/addflatform'=>'admin#addflatform'
+
+get '/addschemeform'=>'admin#addschemeform'
+
+post '/file_upload'=>'files#file_upload'
 end

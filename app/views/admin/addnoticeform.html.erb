@@ -1,0 +1,24 @@
+
+<br>
+<br>
+
+<%= form_tag('/Addnotice', method: "post") do%>
+
+
+<%= label_tag(:message, "Message") %>
+<%= text_field_tag(:message) %><br>
+
+<%= label_tag(:homepage, "Url") %>
+<%= url_field(:user, :homepage) %>
+
+
+<%= label_tag(:start_date, "Start Date:") %>
+<%= date_field(:user, :start_date,:value=>"1997-09-04") %>
+
+<%= label_tag(:end_date, "End Date:") %>
+<%= date_field(:user, :end_date,:value=>"1997-12-04") %>
+
+
+<%= submit_tag 'Add Scheme',:class=>("btn waves-effect waves-light col s12")%>
+<%end%>
+

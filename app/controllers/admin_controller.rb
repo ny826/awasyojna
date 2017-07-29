@@ -18,7 +18,7 @@ class AdminController < ApplicationController
 	email=user["address"]
 	password=params[:password]
 
-    @result = HTTParty.post("http://127.0.0.1:8000/employee/login",
+    @result = HTTParty.post("http://13.126.53.179:8000/employee/login",
          :body => {
          	:email => email,         	
          	:password => password,
@@ -43,12 +43,12 @@ class AdminController < ApplicationController
 
 
   def aregisteration
-  	user=params[:user]
+    user=params[:user]
 	email=user["address"]
 	password=params[:password]
 	name=params[:name]
 
-    @result = HTTParty.post("http://127.0.0.1:8000/employee/create",
+    @result = HTTParty.post("http://13.126.53.179:8000/employee/create",
          :body => {
          	:name=>name,
          	:email => email,         	
@@ -73,7 +73,7 @@ class AdminController < ApplicationController
 
 
  def Alluser
- 	 response = HTTParty.get("http://127.0.0.1:8000/user/info"
+ 	 response = HTTParty.get("http://13.126.53.179:8000/user/info"
          )
  puts response
  res=response["result"]
@@ -84,20 +84,39 @@ class AdminController < ApplicationController
 
 
  def seenotice
- 	response = HTTParty.get("http://127.0.0.1:8000/notifications/notifications"
+ 	response = HTTParty.get("http://13.126.53.179:8000/notifications/notifications"
          )
  puts response
  #byebug;
  end
 
 
+ def addnoticeform
+
+ end
+
+ def addflatform
+ end
+
+ def addschemeform
+ end
+
+
+
  def Addnotice
- 	@result = HTTParty.post("http://127.0.0.1:8000/notifications/notifications",
+        user=params[:user]
+        message=params[:message]
+        url=user["homepage"]
+        start_date=user["start_date"]
+        end_date=user["end_date"]
+
+ 	@result = HTTParty.post("http://13.126.53.179:8000/notifications/notifications",
+            
          :body => {
-         	:message =>"Hello Hacathon",
-	         :url =>"https://gmail.com",
-	         :end_date =>"2017-08-10",
-	         :start_date =>"2017-07-14",
+         	:message =>message,
+	         :url =>url,
+	         :end_date =>end_date,
+	         :start_date =>start_date,
 	        }.to_json,
             :headers => { 'Content-Type' => 'application/json' })
         
@@ -113,29 +132,29 @@ class AdminController < ApplicationController
 
  end
 
- def Addflat
+ # def Addflat
 
- 	@result = HTTParty.post("http://127.0.0.1:8000/scheme/add_flat",
-                  :body => {
-         	:scheme =>"id here",
-	         :flat_type =>"id here",
-	         :carpet_area =>"2017-08-10",
-	         :accomodation =>"2017-07-14",
-	         :estimate_cost=>"2017-08-18",
-	         :application_cost=>"",
-	         :maintenance_deposit=>"",
-	         :no_of_flats=>"",
-	        }.to_json,
-            :headers => { 'Content-Type' => 'application/json' })
+ # 	@result = HTTParty.post("http://13.126.53.179:8000/scheme/add_flat",
+ #                  :body => {
+ #         	:scheme =>"id here",
+	#          :flat_type =>"id here",
+	#          :carpet_area =>"2017-08-10",
+	#          :accomodation =>"2017-07-14",
+	#          :estimate_cost=>"2017-08-18",
+	#          :application_cost=>"",
+	#          :maintenance_deposit=>"",
+	#          :no_of_flats=>"",
+	#         }.to_json,
+ #            :headers => { 'Content-Type' => 'application/json' })
         
-        puts @result
+ #        puts @result
 
- end
+ # end
 
  
 
  def seescheme
- 	  result = HTTParty.get("http://127.0.0.1:8000/scheme/scheme_get?admin=1")
+ 	  result = HTTParty.get("http://13.126.53.179:8000/scheme/scheme_get?admin=1")
          #puts result
          #puts result["schemes"]
          result=result["result"]
@@ -148,13 +167,21 @@ class AdminController < ApplicationController
  
  
  def Addscheme
- 	 	@result = HTTParty.post("http://127.0.0.1:8000/scheme/create_scheme",
-                  :body => {
-         	:name =>"Hello Hacathon",
-	         :location =>"https://gmail.com",
-	         :end_date =>"2017-08-10",
-	         :start_date =>"2017-07-14",
-	         :draw_date=>"2017-08-18",
+ 
+        name=params[:name]
+        user=params[:user];
+        url=user["address"]
+        start_date=user["start_date"]
+        end_date=user["end_date"]
+        draw_date=user["draw_date"]
+
+ 	 	@result = HTTParty.post("http://13.126.53.179:8000/scheme/create_scheme",
+          :body => {
+         	:name =>name,
+	         :location =>user,
+	         :end_date =>end_date,
+	         :start_date =>start_date,
+	         :draw_date=>draw_date,
 	        }.to_json,
             :headers => { 'Content-Type' => 'application/json' })
         

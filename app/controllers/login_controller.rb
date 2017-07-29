@@ -33,7 +33,7 @@ def registration
     no=3;
     end	
     # byebug;
-    @result = HTTParty.post("http://127.0.0.1:8000/user/register",
+    @result = HTTParty.post("http://13.126.53.179:8000/user/register",
          :body => {
          	:birth_date => dob,
          	:phone => phone, 
@@ -69,7 +69,7 @@ def login
 	email=user["address"]
 	password=params[:password]
 
-    @result = HTTParty.post("http://127.0.0.1:8000/user/login",
+    @result = HTTParty.post("http://13.126.53.179:8000/user/login",
          :body => {
          	:email => email,         	
          	:password => password,
@@ -91,7 +91,7 @@ end
 
 def logout
 puts "inside logout"
-@result = HTTParty.post("http://127.0.0.1:8000/user/logout",
+@result = HTTParty.post("http://13.126.53.179:8000/user/logout",
          :body => {
 
          	:session_id=>session[:user_id]
@@ -113,7 +113,7 @@ end
 
 def User_profile
     puts session[:user_id]
- response = HTTParty.get("http://127.0.0.1:8000/user/info?session_id=#{session[:user_id]}"
+ response = HTTParty.get("http://13.126.53.179:8000/user/info?session_id=#{session[:user_id]}"
          )
  puts response
  res=response["result"]
