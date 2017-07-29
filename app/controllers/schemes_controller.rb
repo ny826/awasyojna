@@ -5,13 +5,15 @@ class SchemesController < ApplicationController
   
 
   def scheme
-         result = HTTParty.get("http://127.0.0.1:8000/scheme/scheme_get")
+         result = HTTParty.get("http://127.0.0.1:8000/scheme/scheme_get?admin=1")
          #puts result
          #puts result["schemes"]
          result=result["result"]
          #puts result
          @res=result["schemes"]
-         #puts @res
+         puts @res
+
+
 
   end
   
