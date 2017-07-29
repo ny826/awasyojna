@@ -29,7 +29,7 @@
     <div class="nav-wrapper">
       <div class="row">
         <div class="col s12">
-          <a href="/home/hometab" class="brand-logo" style="display:block;float:left;"><img class="logo" src="http://www.rmc.gov.in/rmcwebsite/images/Logo/RMClogo.png" ></a>
+          <a href="/home/hometab" class="brand-logo" style="display:block;float:left;"><img class="logo" id="logopic"src="http://www.rmc.gov.in/rmcwebsite/images/Logo/RMClogo.png" ></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
 
             <%if !session[:user_id]%>
@@ -181,7 +181,7 @@ nav.nav-extended .nav-wrapper {
 main {
   flex: 1 0 auto;
 }
-img {
+#logopic{
 
     height: 66px;
 }
