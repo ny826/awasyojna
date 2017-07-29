@@ -38,6 +38,11 @@ post '/scheme_register'=>'schemes#scheme_register'
 
 get '/notification'=>'schemes#notification'
 
+
+
+###############  Admin Routes
+
+
 get '/avlogin'=>'admin#avlogin'
 
 get '/avregisteration'=>'admin#avregisteration'
@@ -45,4 +50,24 @@ get '/avregisteration'=>'admin#avregisteration'
 post '/alogin'=>'admin#alogin'
 
 post '/aregisteration'=>'admin#aregisteration'
+
+get '/admin/index'=>'admin#index'
+
+get '/admin/Alluser'=>'admin#Alluser'
+
+
+get '/admin/seenotice'=>'admin#seenotice'
+
+post '/admin/Addnotice'=>'admin#Addnotice'
+
+get '/admin/seeflat'=>'admin#seeflat'
+
+post '/admin/Addflat'=>'admin#Addflat'
+
+get '/admin/seescheme'=>'admin#seescheme'
+ 
+ post '/admin/Addscheme'=>'admin#Addscheme'
+
+
+
 end

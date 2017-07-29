@@ -1,0 +1,19 @@
+<%@user.each do |user|%>
+Name : <%= user["name"]%><br>
+Father Name : <%= user["father_name"]%><br>
+Spouse Name : <%= user["spouse_name"]%><br>
+DOB : <%= user["birth_date"]%><br>
+Email : <%= user["email"]%><br>
+Gender : <%if user["gender"]==1%>
+<%= "Male"%>
+<%elsif user["gender"]==2%>
+<%= "Female"%>
+<%elsif user["gender"]==3%>
+<%= "Others"%>
+<%end%>
+<br>
+Phone : <%= user["phone"]%><br>
+Pan No : <%= user["pan_number"]%><br>
+Aadhar No : <%= user["aadhar_no"]%><br>
+Address : <%= user["address"]%><br>
+<%end%>

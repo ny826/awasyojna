@@ -1,0 +1,24 @@
+
+
+<div class="col s12">
+    <ul class="collapsible popout" data-collapsible="accordion">
+      <li class="collection-header"><h4>Schemes</h4></li>
+           <% @res.each do |t|%>
+                    <li>
+
+             <div class="collapsible-header"><%= t["name"]%><i class="material-icons right">add</i></div>
+             <div class="collapsible-body"><div class="row"></div>
+             <ul class="collection">
+                <li class="collection-item">
+                  Carpet Area : <%= t["flats"][0]["carpet_area"]%><br>
+                  Accomodation : <%= t["flats"][0]["accomodation"]%><br>
+                  Estimate Cost : <%= t["flats"][0]["estimate_cost"]%><br>
+                  Application Amount : <%= t["flats"][0]["application_amount"]%><br>
+                  Maintenance Deposit : <%= t["flats"][0]["maintenance_deposit"]%><br>
+                  No Of Flats : <%= t["flats"][0]["no_of_flats"]%><br>
+                </li>
+              </ul>
+          <%end%>
+      </li>
+     </ul>
+</div>
