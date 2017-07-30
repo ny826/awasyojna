@@ -88,5 +88,9 @@ class SchemesController < ApplicationController
 
   end
 
+  def verify
+    
+  end
+
  
 end

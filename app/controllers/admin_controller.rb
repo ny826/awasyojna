@@ -32,6 +32,7 @@ class AdminController < ApplicationController
         res=@result["result"]
         session[:user_id]=res["session_id"]
         session[:uid]=res["user_id"]
+        session[:email]=res["email"]
         return redirect_to '/admin/index';
         else
         return redirect_to '/avlogin'
@@ -187,6 +188,13 @@ class AdminController < ApplicationController
         
         puts @result
  end
+
+
+def verify
+
+
+end
+
 
 def avlogout
 	session[:user_id]=nil;

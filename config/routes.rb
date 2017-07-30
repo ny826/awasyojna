@@ -93,5 +93,5 @@ post '/register_for_scheme_with_details'=>'schemes#register_for_scheme_with_deta
 
 post '/register_for_scheme'=>'schemes#register_for_scheme'
 
-
+post '/verify'=>'file_upload#verify'
 end

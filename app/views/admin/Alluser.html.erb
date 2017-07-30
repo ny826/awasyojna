@@ -1,19 +1,54 @@
+
+
+<table>
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Father Name</th>
+              <th>Spouse</th>
+              <th>DOB</th>
+              <th>Email</th>
+              <th>Gender</th>
+              <th>Phone</th>
+              <th>Pan No</th>
+              <th>Aadhar No</th>
+              <th>Address</th>
+               <th>spouse_aadhar</th>
+              <th>caste</th>
+              <td>Is Verified</td>
+              <td>Verify</td>
+
+
+          </tr>
+        </thead>
 <%@user.each do |user|%>
-Name : <%= user["name"]%><br>
-Father Name : <%= user["father_name"]%><br>
-Spouse Name : <%= user["spouse_name"]%><br>
-DOB : <%= user["birth_date"]%><br>
-Email : <%= user["email"]%><br>
-Gender : <%if user["gender"]==1%>
-<%= "Male"%>
-<%elsif user["gender"]==2%>
-<%= "Female"%>
-<%elsif user["gender"]==3%>
-<%= "Others"%>
-<%end%>
-<br>
-Phone : <%= user["phone"]%><br>
-Pan No : <%= user["pan_number"]%><br>
-Aadhar No : <%= user["aadhar_no"]%><br>
-Address : <%= user["address"]%><br>
-<%end%>
+
+
+        <tbody>
+          <tr>
+            <td><%= user["name"]%></td>
+            <td><%= user["father_name"]%></td>
+            <td><%= user["spouse_name"]%></td>
+            <td><%= user["birth_date"]%></td>
+            <td><%= user["email"]%></td>
+            <td><%= user["gender"]%></td>
+            <td><%= user["phone"]%></td>
+            <td><%= user["pan_number"]%></td>
+            <td><%= user["aadhar_no"]%></td>
+            <td><%= user["address"]%></td>
+            <td><%= user["spouse_name"]%></td>
+            <td><%= user["caste"]%></td>
+            <td><%= user['is_verified']%></td>
+            <td><a href="#">verify</a></td>
+
+          </tr>
+        </tbody>
+        <%end%>
+
+      </table>
+
+
+
+<br><br>
+
+
