@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RMC ADMIN</title>
+  <title>Mart</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
   <%= javascript_include_tag 'application','data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
@@ -16,7 +16,7 @@
 
 
 <div id="nav-selector">
-  
+
 
 <!-- Dropdown Structure -->
 <ul id="User" class="dropdown-content">
@@ -24,30 +24,34 @@
 </ul>
 
 <ul id="scheme" class="dropdown-content">
-  <li><a href="/addschemeform">Add Scheme</a></li>
+  <li><a href="/admin/Addscheme">Add Scheme</a></li>
   <li><a href="/admin/seescheme">All Scheme</a></li>
 </ul>
 
 <ul id="notice" class="dropdown-content">
-<li><a href="/addnoticeform">Add Notice</a></li>
+  <li><a href="/admin/Addnotice">Add Notice</a></li>
+  <li><a href="/admin/seenotice">See Notices</a></li>
 
-<li><a href="/admin/seenotice">See Notices</a></li>
+</ul>
+
+<ul id="flats" class="dropdown-content">
+  <li><a href="/admin/Addflat">Add Flats</a></li>
+  <li><a href="/admin/seeflat">see Flats</a></li>
 
 </ul>
 
 
+
 <ul id="fb" class="dropdown-content">
-  
+
 <% if session[:user_id]%>
-<li><%= link_to "Logout", url_for(controller: :admin, action: :avlogout), method: :post%></li>
 
 <%end%>
 </ul>
 
 <ul id="fb_login" class="dropdown-content">
-  
-  <% if session[:user_id]%>
-<li><%= link_to "Logout", url_for(controller: :admin, action: :avlogout), method: :post%></li>
+
+ <% if session[:user_id]%>
 
 <%end%>
 
@@ -64,10 +68,10 @@
     <li><a href="/admin/index">Home</a></li>
       <!-- Dropdown Trigger -->
     <li><a href="/admin/Alluser">All User</a></li>
-       
 
        <li><a class="dropdown-button" href="#" data-activates="scheme">Scheme<i class="material-icons right">arrow_drop_down</i></a></li>
 
+       <li><a class="dropdown-button" href="#" data-activates="flats">Flats<i class="material-icons right">arrow_drop_down</i></a></li>
 
         <li><a class="dropdown-button" href="#" data-activates="notice">Notices<i class="material-icons right">arrow_drop_down</i></a></li>
 
@@ -76,10 +80,8 @@
     <!--  login option in mobile tab -->
 
     <ul class="right hidden-lg-o">
-        <% if session[:user_id]%> 
-       <li><%= link_to "Logout", url_for(controller: :admin, action: :avlogout), method: :post%></li>
-
-<%end%>
+        <% if session[:user_id]%>
+       <%end%>
       </ul>
 
 
@@ -100,7 +102,7 @@
             <div class="collapsible-body">
               <ul>
 
-                 <li><a href="/addschemeform">Add Scheme</a></li>
+                 <li><a href="/admin/Addscheme">Add Scheme</a></li>
    <li>          <a href="/admin/seescheme">All Scheme</a></li>
 
               </ul>
@@ -109,7 +111,22 @@
           </li>
         </ul>
       </li>
+     <hr>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">Flat<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="/admin/Addnotice">Add Notice</a></li>
+                <li><a href="/admin/seenotice">See Notices</a></li>
 
+               </ul>
+            </div>
+
+          </li>
+        </ul>
+      </li>
       <hr>
       <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
@@ -117,7 +134,7 @@
             <a class="collapsible-header">Notice<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
               <ul>
-                  <li><a href="/addnoticeform">Add Notices</a></li>
+                  <li><a href="/admin/Addflat">Add Flats</a></li>
                   <li><a href="/admin/seeflat">see Flats</a></li>
               </ul>
             </div>
@@ -126,7 +143,6 @@
         </ul>
       </li>
       <hr>
-
     </ul>
 
     <a href="" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -143,20 +159,20 @@
 
  <main></main>
 <div class="container">
-<div class="row"> 
+<div class="row">
 <%= yield%>
 </div>
 </div>
 </main>
 
-  
+
 
 
     <footer class="page-footer indigo darken-4">
         <div class="container">
           <div class="row">
             <div class="col l6 s12">
-              <h5 class="white-text">About Rajkot Municipal Corporation</h5>
+              <h2 class="white-text">About Rajkot Municipal Corporation</h2>
               <p class="grey-text text-lighten-4">Rajkot Municipal Corporation (RMC) is a local government committed to provide basic infrastructure facilities including entertainment facilities to the people of the city.</p>
 
 
@@ -216,5 +232,3 @@ img{
     width: 225px;
   }
 </style>
-
-
