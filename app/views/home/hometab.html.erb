@@ -1,39 +1,17 @@
-<br><br><br>
-<div class="slider">
-    <ul class="slides">
-      <li>
-        <img src="http://www.rmc.gov.in/rmcwebsite/images/Slider/12.jpg"> <!-- random image -->
-        <div class="caption center-align">
-        </div>
-      </li>
-      <li>
-        <img src="http://www.rmc.gov.in/rmcwebsite/images/Slider/sw2.jpg"> <!-- random image -->
-        <div class="caption left-align">
-        </div>
-      </li>
-      <li>
-        <img src="http://www.rmc.gov.in/rmcwebsite/images/Slider/2.jpg"> <!-- random image -->
-        <div class="caption right-align">
-        </div>
-      </li>
-      <li>
-        <img src="http://www.rmc.gov.in/rmcwebsite/images/Slider/3.jpg"> <!-- random image -->
-        <div class="caption center-align">
-        </div>
-      </li>
-      <li>
-        <img src="http://www.rmc.gov.in/rmcwebsite/images/Slider/5.jpg"> <!-- random image -->
-        <div class="caption center-align">
-        </div>
-      </li>
-      <li>
-        <img src="http://www.rmc.gov.in/rmcwebsite/images/Slider/sw1.jpg"> <!-- random image -->
-        <div class="caption center-align">
-        </div>
-      </li>
 
-    </ul>
+
+  <div class="carousel">
+    <a class="carousel-item responsive-img" href="#one!"><img src="http://www.rmc.gov.in/rmcwebsite/images/Slider/12.jpg"></a>
+    <a class="carousel-item responsive-img" href="#two!"><img src="http://www.rmc.gov.in/rmcwebsite/images/Slider/sw2.jpg"></a>
+    <a class="carousel-item responsive-img" href="#three!"><img src="http://www.rmc.gov.in/rmcwebsite/images/Slider/2.jpg"></a>
+    <a class="carousel-item responsive-img" href="#four!"><img src="http://www.rmc.gov.in/rmcwebsite/images/Slider/3.jpg"></a>
+    <a class="carousel-item responsive-img" href="#five!"><img src="http://www.rmc.gov.in/rmcwebsite/images/Slider/5.jpg"></a>
+    <a class="carousel-item responsive-img" href="#five!"><img src="http://www.rmc.gov.in/rmcwebsite/images/Slider/sw1.jpg"></a>
+
+
   </div>
+
+<br>
 
   <div class="span12" data-motopress-type="loop" data-motopress-loop-file="loop/loop-page.php">
   							<div id="post-203" class="page post-203 type-page status-publish hentry">
@@ -58,7 +36,11 @@
 
 
 
-
+<style media="screen">
+.carousel .carousel-item {
+width:800px !important;
+height: 500px !important;}
+</style>
 
 
 
@@ -73,5 +55,7 @@
 $(document).ready(function(){
       $('.slider').slider();
     });
-
+    $(document).ready(function(){
+         $('.carousel').carousel();
+       });
 </script>
