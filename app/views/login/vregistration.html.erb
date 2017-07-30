@@ -64,6 +64,10 @@ Caste :
 <%= date_field(:user, :born_on) %>
 
 <%= submit_tag 'Register',:class=>("btn waves-effect waves-light col s12")%>
-<a href="/vlogin">Login</a>
+<br>
+<br>
+<br>
+<%= link_to "Login", url_for(controller: :login, action: :vlogin),:class=>("btn waves-effect waves-light col s12") , method: :get%>
+
 
 <%end%>
