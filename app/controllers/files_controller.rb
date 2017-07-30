@@ -64,7 +64,7 @@ def file_upload
 
     if(@result["error"]==false)
     puts @result["error"]
-    return redirect_to '/homw/index'
+    return redirect_to '/home/index'
     else
     puts @result["error"]
     return redirect_to '/index'
