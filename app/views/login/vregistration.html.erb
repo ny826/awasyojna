@@ -11,14 +11,33 @@
   <%= radio_button_tag(:Gender, "female") %>
   <%= label_tag(:Gender_female, "Female") %>
   <%= radio_button_tag(:Gender, "other") %>
-  <%= label_tag(:Gender_other, "Other") %><br>
+  <%= label_tag(:Gender_other, "Other") %><br><br>
 
+Caste :
+
+  <%= radio_button_tag(:Cast, "SC") %>
+  <%= label_tag(:Cast_SC, "SC") %>
+
+  <%= radio_button_tag(:Cast, "ST") %>
+  <%= label_tag(:Cast_ST, "ST") %>
+
+  <%= radio_button_tag(:Cast, "OBC") %>
+  <%= label_tag(:Cast_OBC, "OBC") %>
+
+ <%= radio_button_tag(:Cast, "GENERAL") %>
+  <%= label_tag(:Cast_GENERAL, "GENERAL") %>
+
+  <br>
 
   <%= label_tag(:father, "Father Name:") %>
   <%= text_field_tag(:father) %><br>
 
   <%= label_tag(:spouse, "Spouse Name:") %>
   <%= text_field_tag(:spouse) %><br>
+
+  <%= label_tag(:spouse_aadhar, "Spouse aadhar No:") %>
+  <%= text_field_tag(:spouse_aadhar) %><br>
+
 
   <%= label_tag(:pan, "Pan No:") %>
   <%= text_field_tag(:pan) %><br>
@@ -27,9 +46,6 @@
   <%= label_tag(:aadhar, "Aadhar No:") %>
   <%= text_field_tag(:aadhar) %><br>
 
-
-
-  <%= select_tag(:Gender, '<option value="1">Male</option>, <option value="2">Female</option>') %><br>
 
 
 <%= label_tag(:address, "Email:") %>

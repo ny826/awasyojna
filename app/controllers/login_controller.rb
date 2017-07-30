@@ -25,13 +25,21 @@ def registration
     pan=params[:pan]
     aadhar=params[:aadhar]
     
-    if gender=="male"
+    cast=params[:Cast]
+    spouse_aadhar=params[:spouse_aadhar]
+
+
+    if cast=="GENERAL"
     no=1;
-    elsif gender=="female"
+    elsif cast=="OBC"
     no=2;
-    elsif gender=="Others"
+    elsif cast=="SC"
     no=3;
+    elsif cast=="ST"
+    no=4;
     end	
+
+
     # byebug;
     @result = HTTParty.post("http://13.126.53.179:8000/user/register",
          :body => {
@@ -46,13 +54,15 @@ def registration
             :spouse_name=>spouse,
             :pan_number=>pan,
             :aadhar_no=>aadhar,
+            :spouse_aadhar=>spouse_aadhar,
+            :caste=>no,
          	}.to_json,
             :headers => { 'Content-Type' => 'application/json' })
 
         puts @result
 
         if @result["error"]==false
-        return redirect_to '/';
+        return redirect_to '/vlogin';
         else
         puts "Wrong Entry of inputs "
         return redirect_to '/vregistration'
@@ -83,7 +93,7 @@ def login
         res=@result["result"]
         session[:user_id]=res["session_id"]
         session[:uid]=res["user_id"]
-        return redirect_to '/';
+        return redirect_to '/index';
         else
         return redirect_to '/vlogin'
         end

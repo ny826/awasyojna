@@ -1,25 +1,118 @@
+      
+<form action="/file_upload" method="post">
+   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	    <label for="filePicker">Aadhar :</label><br>
+        <input type="file" id="filePicker">
+        <input type="hidden" id="base64textarea" name="doc_string">
+        <input type="hidden" id="format" name="format">
+        <br>
 
-<br>
-<br>
-<form action="/file_upload">
-Image :<br>
-<input type="file" id="fileuploadform" />
-  <br>
-  <input type="submit" value="Submit">
-</form> 
+        <label for="filePicker">pan :</label><br>
+        <input type="file" id="filePicker_pan">
+        <input type="hidden" id="base64textarea_pan" name="doc_string_pan">
+        <input type="hidden" id="format_pan" name="format_pan">
+        
+        <br>
+        <label for="filePicker">photo :</label><br>
+        <input type="file" id="filePicker_photo">
+        <input type="hidden" id="base64textarea_photo" name="doc_string_photo">
+        <input type="hidden" id="format_photo" name="format_photo"><br><br>
+
+
+        <input type="submit" value="Upload">
+
+</form>
+
+<br><br>
+<a href="/">Already Uploaded</a>
 
 
 <script type="text/javascript">
-function uint8ToString(buf) {
-    var i, length, out = '';
-    for (i = 0, length = buf.length; i < length; i += 1) {
-        out += String.fromCharCode(buf[i]);
+	
+	var handleFileSelect = function(evt) {
+    var a=document.getElementById("filePicker").value; 
+    console.log(a);
+    var files = evt.target.files;
+    console.log(evt.target.files);
+    var file = files[0];
+
+    if (files && file) {
+        var reader = new FileReader();
+
+        reader.onload = function(readerEvt) {
+            var binaryString = readerEvt.target.result;
+            document.getElementById("base64textarea").value = btoa(binaryString);
+
+        };
+
+        reader.readAsBinaryString(file);
+             document.getElementById("format").value=a;
+
     }
-    return out;
+};
+
+if (window.File && window.FileReader && window.FileList && window.Blob) {
+    document.getElementById('filePicker').addEventListener('change', handleFileSelect, false);
+} else {
+    alert('The File APIs are not fully supported in this browser.');
 }
 
-var base64 = btoa(uint8ToString(yourUint8Array));
+
+var handleFileSelect = function(evt) {
+    var a=document.getElementById("filePicker_pan").value; 
+    console.log(a);
+    var files = evt.target.files;
+    console.log(evt.target.files);
+    var file = files[0];
+
+    if (files && file) {
+        var reader = new FileReader();
+
+        reader.onload = function(readerEvt) {
+            var binaryString = readerEvt.target.result;
+            document.getElementById("base64textarea_pan").value = btoa(binaryString);
+
+        };
+
+        reader.readAsBinaryString(file);
+             document.getElementById("format_pan").value=a;
+
+    }
+};
+
+if (window.File && window.FileReader && window.FileList && window.Blob) {
+    document.getElementById('filePicker_pan').addEventListener('change', handleFileSelect, false);
+} else {
+    alert('The File APIs are not fully supported in this browser.');
+}
 
 
 
+var handleFileSelect = function(evt) {
+    var a=document.getElementById("filePicker_photo").value; 
+    console.log(a);
+    var files = evt.target.files;
+    console.log(evt.target.files);
+    var file = files[0];
+
+    if (files && file) {
+        var reader = new FileReader();
+
+        reader.onload = function(readerEvt) {
+            var binaryString = readerEvt.target.result;
+            document.getElementById("base64textarea_photo").value = btoa(binaryString);
+
+        };
+
+        reader.readAsBinaryString(file);
+             document.getElementById("format_photo").value=a;
+
+    }
+};
+
+if (window.File && window.FileReader && window.FileList && window.Blob) {
+    document.getElementById('filePicker_photo').addEventListener('change', handleFileSelect, false);
+} else {
+    alert('The File APIs are not fully supported in this browser.');
+}
 </script>
