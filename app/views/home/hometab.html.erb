@@ -1,4 +1,6 @@
-
+<br>
+<br>
+<br>
 
   <div class="carousel">
     <a class="carousel-item responsive-img" href="#one!"><img src="http://www.rmc.gov.in/rmcwebsite/images/Slider/12.jpg"></a>
@@ -40,6 +42,7 @@
 .carousel .carousel-item {
 width:800px !important;
 height: 500px !important;}
+
 </style>
 
 
@@ -58,4 +61,12 @@ $(document).ready(function(){
     $(document).ready(function(){
          $('.carousel').carousel();
        });
+       $('.carousel').carousel({
+    padding: 200
+});
+autoplay()
+function autoplay() {
+    $('.carousel').carousel('next');
+    setTimeout(autoplay, 2500);
+}
 </script>
