@@ -12,12 +12,9 @@
                <div class="collapsible-header"><%= t["name"]%><i class="material-icons right">add</i></div>
                <div class="collapsible-body"><div class="row"></div>
 
-
-                    <% if session[:user_id]%>
-                    <%= link_to "Register Here", url_for(controller: :schemes, action: :scheme_register), method: :post%>
-                    <%else%>
-                    <a href="/vlogin">Login TO Register On Scheme</a>
-                   <%end%>
+                    <%= t["details"]%>
+                    <% slug=t["slug"]%>
+                    <%= link_to "For More Click Here", url_for(controller: :schemes, action: :register_scheme,:scheme_name=>slug), method: :post%>
                   </li>
                     <%end%>
 

@@ -85,4 +85,13 @@ get '/addflatform'=>'admin#addflatform'
 get '/addschemeform'=>'admin#addschemeform'
 
 post '/file_upload'=>'files#file_upload'
+
+
+post '/register_scheme'=>'schemes#register_scheme'
+
+post '/register_for_scheme_with_details'=>'schemes#register_for_scheme_with_details'
+
+post '/register_for_scheme'=>'schemes#register_for_scheme'
+
+
 end

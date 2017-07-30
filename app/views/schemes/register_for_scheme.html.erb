@@ -1,0 +1,32 @@
+
+
+<br>
+<br>
+
+
+<%= form_tag('/register_for_scheme_with_details', method: "post",:flat_id=>@flat_id) do%>
+
+<%= label_tag(:bank_name, "Bank Name") %>
+<%= text_field_tag(:bank_name) %><br>
+
+<%= label_tag(:bank_branch_name, "Bank Branch Name") %>
+<%= text_field_tag(:bank_branch_name) %><br>
+
+<%= label_tag(:ifsc, "IFSC") %>
+<%= text_field_tag(:ifsc) %><br>
+
+
+<%= label_tag(:account_no, "Account No") %>
+<%= text_field_tag(:account_no) %><br>
+
+
+Joint Application:
+<%= radio_button_tag(:res, "true") %>
+<%= label_tag(:res_true, "Yes") %>
+
+  <%= radio_button_tag(:res, "false") %>
+  <%= label_tag(:res_false, "No") %>
+
+
+<%= submit_tag 'Register',:class=>("btn waves-effect waves-light col s12")%>
+<%end%>

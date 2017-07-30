@@ -1,0 +1,41 @@
+
+
+<table>
+        <thead>
+          <tr>
+              <th>Flat Type</th>
+              <th>Carpet Area</th>
+              <th>Accomodation</th>
+              <th>Estimate Cost</th>
+              <th>App Amount</th>
+              <th>Maintainence Cost</th>
+              <th>No Of Flats</th>
+
+          </tr>
+        </thead>
+<% @res[0]["flats"].each do |v|%>
+
+        <tbody>
+          <tr>
+            <td><%= v["flat_type"]["name"]%></td>
+            <td><%= v["carpet_area"]%></td>
+            <td><%= v["accomodation"]%></td>
+            <td><%= v["estimate_cost"]%></td>
+            <td><%= v["application_amount"]%></td>
+            <td><%= v["maintenance_deposit"]%></td>
+            <td><%= v["no_of_flats"]%></td>
+            <td><%= link_to "Register", url_for(controller: :schemes, action: :register_for_scheme,:flat_id=>v["id"]), method: :post%></td>
+          </tr>
+        </tbody>
+        <%end%>
+
+      </table>
+
+
+
+<br><br>
+Location :<%= @res[0]["location"]%>
+End Date :<%= @res[0]["end_date"]%>
+Draw Date :<%= @res[0]["draw_date"]%>, 
+
+
