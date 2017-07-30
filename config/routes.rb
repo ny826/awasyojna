@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   get 'schemes/scheme'
 
+  get '/'=>'home#hometab'
+
+  
   get '/home/hometab' => 'home#hometab'
 
   get '/home/ray' =>  'home#ray'
@@ -65,7 +68,7 @@ get '/admin/seeflat'=>'admin#seeflat'
 post '/Addflat'=>'admin#Addflat'
 
 get '/admin/seescheme'=>'admin#seescheme'
- 
+
  post '/Addscheme'=>'admin#Addscheme'
 
 

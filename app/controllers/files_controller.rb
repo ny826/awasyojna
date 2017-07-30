@@ -31,8 +31,8 @@ def file_upload
     puts "photo is #{photo}"
     format_photo = format_photo.split(".")[1]
     puts "format_photo is #{format_photo}"
-    
-    
+
+
 
 
      @result = HTTMultiParty.post("http://13.126.53.179:8000/documents/upload",
@@ -61,14 +61,14 @@ def file_upload
 
          	       ].to_json,
             :headers => { 'Content-Type' => 'application/json' })
-	
+
     if(@result["error"]==false)
     puts @result["error"]
-    return redirect_to '/'
+    return redirect_to '/homw/index'
     else
     puts @result["error"]
     return redirect_to '/index'
-    end 
+    end
 
 
 end
